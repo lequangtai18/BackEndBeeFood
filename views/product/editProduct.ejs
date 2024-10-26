@@ -1,18 +1,18 @@
 <%- include('../inc/header-user.ejs') %>
 <div style="margin-top: 80px; height: 100vh; margin-left: 320px; flex: 1">
   <div class="input-form">
-    <h3 style="text-align: center">Edit Sản Phẩm</h3>
+    <h3 style="text-align: center">Thêm Sản Phẩm</h3>
     <form
       enctype="multipart/form-data"
       method="POST"
-      action="http://localhost:3000/api/product/editProduct/<%= product._id %>"
+      action="api/product/addProduct"
     >
       <div class="mb-3 mt-4">
         <label class="form-label">Tên Sản Phẩm:</label>
         <input
           class="form-control"
           required
-          placeholder="<%= product.name %>"
+          placeholder="Nhập tên sản phẩm"
           name="name"
         />
       </div>
@@ -22,19 +22,17 @@
           class="form-control"
           required
           type="number"
-          placeholder="<%= product.realPrice %>"
+          placeholder="Nhập giá gốc"
           name="realPrice"
         />
       </div>
 
       <label class="form-label">Loại Sản Phẩm:</label>
-
       <div style="display: flex" class="radio-group">
         <div class="form-check">
           <input
             type="radio"
             class="form-check-input"
-            placeholder="<%= product.description %>"
             name="category"
             value="tra sua"
             checked
@@ -98,19 +96,19 @@
       </div>
 
       <div class="mb-3">
-        <label class="form-label">Chọn ảnh mới</label>
+        <label class="form-label">Chọn ảnh</label>
         <input type="file" class="form-control" required name="image" />
       </div>
       <div class="mb-3">
-        <label class="form-label">Mô tả sản phẩm</label>
+        <label class="form-label">Mô Tả Sản Phẩm</label>
         <input
           class="form-control"
           required
-          placeholder="<%= product.description %>"
+          placeholder="Nhập mô tả cho sản phẩm"
           name="description"
         />
       </div>
-      <button type="submit" class="btn btn-primary">Sửa Sản Phẩm</button>
+      <button type="submit" class="btn btn-primary">Thêm Sản Phẩm</button>
     </form>
   </div>
 </div>
